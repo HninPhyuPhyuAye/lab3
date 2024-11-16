@@ -1,16 +1,15 @@
-import  lab2.bmi as bmi  
+import lab2.bmi as bmi
 
+def test_bmi_normal_weight():
+    result = bmi.calculate_bmi(57, 1.73)
+    assert result == 0
 
-def test_bmi_underweight():
-    if bmi < 18.5:
-        print ("Under Weight")
+def test_bmi_over_weight():
+    result = bmi.calculate_bmi(100, 1.73)
+    assert result == 1
 
+def test_bmi_under_weight():
+    result = bmi.calculate_bmi(53, 1.73)
+    assert result == -1
 
-def test_bmi_overweight():
-    if bmi > 25.0:
-        print ("Over Weight")
-
-
-def test_bmi_normalweight():
-    if bmi >= 18.5 or bmi <= 25.0:
-        print ("Normal Weight")
+print("All test passed!")
